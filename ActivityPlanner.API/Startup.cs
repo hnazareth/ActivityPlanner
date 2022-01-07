@@ -31,7 +31,7 @@ namespace ActivityPlanner.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateProperty>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddSingleton(typeof(IPropertyOperations), x => OperationsFactory.PropertyOperations);
