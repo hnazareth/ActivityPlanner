@@ -113,9 +113,9 @@ namespace ActivityPlanner.DAL
             return _context.Survey.ToList();
         }
 
-        public Survey GetSurvey(int idSurvey)
+        public Survey GetSurveyByActivity(int idActivity)
         {
-            return _context.Find<Survey>(idSurvey);
+            return _context.Survey.Where(x => x.activity_id == idActivity).FirstOrDefault();
         }
         #endregion
 

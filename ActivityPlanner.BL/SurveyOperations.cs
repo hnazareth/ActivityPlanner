@@ -37,13 +37,13 @@ namespace ActivityPlanner.BL
             });
         }
 
-        public async Task<SurveyDTO> GetDetail(int id)
+        public async Task<SurveyDTO> GetDetail(int activityId)
         {
             return await Task.Run(() =>
             {
                 SurveyDTO survey = null;
 
-                var result = ActivityPlannerFactory.GetRepository().GetSurvey(id);
+                var result = ActivityPlannerFactory.GetRepository().GetSurveyByActivity(activityId);
 
                 if (result != null)
                     survey = new SurveyDTO

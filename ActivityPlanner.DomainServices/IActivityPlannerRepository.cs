@@ -25,7 +25,7 @@ namespace ActivityPlanner.DomainServices
         #region Survey
         Survey CreateSurvey(Survey survey);
         List<Survey> GetSurveys();
-        Survey GetSurvey(int idSurvey);
+        Survey GetSurveyByActivity(int idActivity);
         #endregion
 
         int SaveChanges();

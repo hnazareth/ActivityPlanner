@@ -43,7 +43,8 @@ namespace ActivityPlanner.API.Controllers
         [HttpGet("GetActivities")]
         public async Task<ActionResult<List<ActivityDTO>>> GetProperties(DateTime? fechaInicial, DateTime? fechaFinal, string status = null)
         {
-            return await _mediator.Send(new GetActivities.GetActivitiesCmd { fecha_inicial = fechaInicial, fecha_final = fechaFinal, status = status });
+            string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/api/survey/GetSurvey";
+            return await _mediator.Send(new GetActivities.GetActivitiesCmd { fecha_inicial = fechaInicial, fecha_final = fechaFinal, status = status, baseUrl = baseUrl });
         }
     }
 }

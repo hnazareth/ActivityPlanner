@@ -16,6 +16,7 @@ namespace ActivityPlanner.API.Features.Activities.Queries
             public DateTime? fecha_inicial { get; set; }
             public DateTime? fecha_final { get; set; }
             public string status { get; set; } = null;
+            public string baseUrl { get; set; }
         }
 
         public class Handler : IRequestHandler<GetActivitiesCmd, List<ActivityDTO>>
@@ -29,7 +30,8 @@ namespace ActivityPlanner.API.Features.Activities.Queries
 
             public async Task<List<ActivityDTO>> Handle(GetActivitiesCmd request, CancellationToken cancellationToken)
             {
-                return await _operations.GetActivities("", request.fecha_inicial, request.fecha_final, request.status);
+                
+                return await _operations.GetActivities(request.baseUrl, request.fecha_inicial, request.fecha_final, request.status);
             }
         }
     }
