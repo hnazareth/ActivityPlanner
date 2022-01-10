@@ -11,21 +11,21 @@ namespace ActivityPlanner.DomainServices
         Property CreateProperty(Property property);
         bool UpdateProperty(Property property);
         Property GetProperty(int idProperty);
-        List<Property> GetProperties();
+        List<Property> GetProperties();        
         #endregion
 
         #region Activity
         Activity CreateActivity(Activity activity);
         bool UpdateActivity(Activity activity);
-        bool DeleteActivity(int idActivity);
+        Activity GetActivity(int idActivity);
         List<Activity> GetActivities();
+        List<Activity> GetActivitiesByProperty(int idProperty);
         #endregion
 
         #region Survey
         Survey CreateSurvey(Survey survey);
-        bool UpdateSurvey(Survey survey);
-        bool DeleteSurvey(int idSurvey);
         List<Survey> GetSurveys();
+        Survey GetSurvey(int idSurvey);
         #endregion
 
         int SaveChanges();

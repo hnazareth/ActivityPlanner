@@ -35,6 +35,8 @@ namespace ActivityPlanner.API
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateProperty>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddSingleton(typeof(IPropertyOperations), x => OperationsFactory.PropertyOperations);
+            services.AddSingleton(typeof(IActivityOperations), x => OperationsFactory.ActivityOperations);
+            services.AddSingleton(typeof(ISurveyOperations), x => OperationsFactory.SurveyOperations);
 
             services.AddSwaggerGen(c =>
             {

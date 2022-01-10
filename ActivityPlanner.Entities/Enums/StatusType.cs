@@ -12,6 +12,8 @@ namespace ActivityPlanner.Entities.Enums
         [Description("Disabled")]
         Disabled = 2,
         [Description("Cancelled")]
-        Cancelled = 3
+        Cancelled = 3,
+        [Description("Done")]
+        Done = 4
     }
 }

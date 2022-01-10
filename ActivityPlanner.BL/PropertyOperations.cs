@@ -14,6 +14,11 @@ namespace ActivityPlanner.BL
 {
     public class PropertyOperations : IPropertyOperations
     {
+        /// <summary>
+        /// Crear nueva propiedad
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public async Task<Property> Create(Property property)
         {
             return await Task.Run(() =>
@@ -31,6 +36,11 @@ namespace ActivityPlanner.BL
             });
         }
 
+        /// <summary>
+        /// Retornar propiedad
+        /// </summary>
+        /// <param name="idProperty"></param>
+        /// <returns></returns>
         public async Task<PropertyDTO> GetProperty(int idProperty)
         {
             return await Task.Run(() =>
@@ -56,6 +66,10 @@ namespace ActivityPlanner.BL
             });
         }
 
+        /// <summary>
+        /// Retornar lista de propiedades
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<PropertyDTO>> GetProperties()
         {
             return await Task.Run(() =>
@@ -74,11 +88,11 @@ namespace ActivityPlanner.BL
             });
         }
 
-        public async Task<bool> Update(Property property)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Deshabilitar propiedad
+        /// </summary>
+        /// <param name="idProperty"></param>
+        /// <returns></returns>
         public async Task<bool> DisableProperty(int idProperty)
         {
             return await Task.Run(() =>

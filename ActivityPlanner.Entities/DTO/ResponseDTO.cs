@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ActivityPlanner.Entities.DTO
 {
-    public class ApiResponseDTO
+    public class ResponseDTO
     {
         public HttpStatusCode HttpStatusCode { get; set; }
         public string Message { get; set; }

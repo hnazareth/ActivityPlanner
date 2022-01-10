@@ -6,9 +6,7 @@ namespace ActivityPlanner.Entities.DTO
 {
     public class ActivityDTO
     {
-        public int id { get; set; }
-
-        public int property_id { get; set; }
+        public int ID { get; set; }
 
         public DateTime schedule { get; set; }
 
@@ -16,8 +14,11 @@ namespace ActivityPlanner.Entities.DTO
 
         public DateTime created_at { get; set; }
 
-        public DateTime updated_at { get; set; }
-
         public string status { get; set; }
+
+        public string condition { get; set; }
+
+        public object property { get; set; }
+        public string survey { get; set; }
     }
 }

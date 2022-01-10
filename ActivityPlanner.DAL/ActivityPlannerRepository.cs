@@ -73,43 +73,49 @@ namespace ActivityPlanner.DAL
         #region Activity
         public Activity CreateActivity(Activity activity)
         {
-            throw new NotImplementedException();
+            activity = _context.Add(activity).Entity;
+            Save();
+            return activity;
         }
         
         public bool UpdateActivity(Activity activity)
         {
-            throw new NotImplementedException();
+            _context.Update(activity);
+            return Save();
         }
 
-        public bool DeleteActivity(int idActivity)
+        public Activity GetActivity(int idActivity)
         {
-            throw new NotImplementedException();
+            return _context.Find<Activity>(idActivity);
         }
 
         public List<Activity> GetActivities()
         {
-            throw new NotImplementedException();
+            return _context.Activity.ToList();
+        }
+
+        public List<Activity> GetActivitiesByProperty(int idProperty)
+        {
+            return _context.Activity.Where(x => x.property_id == idProperty).ToList();
         }
         #endregion
 
         #region Survey
         public Survey CreateSurvey(Survey survey)
         {
-            throw new NotImplementedException();
+            survey = _context.Add(survey).Entity;
+            Save();
+            return survey;
         }
-
-        public bool UpdateSurvey(Survey survey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DeleteSurvey(int idSurvey)
-        {
-            throw new NotImplementedException();
-        }
+        
         public List<Survey> GetSurveys()
         {
-            throw new NotImplementedException();
+            return _context.Survey.ToList();
+        }
+
+        public Survey GetSurvey(int idSurvey)
+        {
+            return _context.Find<Survey>(idSurvey);
         }
         #endregion
 
